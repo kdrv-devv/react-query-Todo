@@ -65,13 +65,11 @@ const TodoComponents = ({deleteMutation}) => {
               <input type="checkbox" />
               
               {
-                isEdit === item.id ? <input onChange={(e)=> setEditText(e.target.value)} value={editText}></input>:<label htmlFor="">{item.task_text}</label>
+                isEdit === item.id ? <input className="bg-transparent"  onChange={(e)=> setEditText(e.target.value)} value={editText}></input>:<label htmlFor="">{item.task_text}</label>
               }
               
-
               <div className="btns flex items-center gap-3">
                 <button onClick={()=> deleteMutation.mutate(item.id)} className="w-[30px] h-full bg-red-600">del</button>
-             
 
                 {
                   isEdit === item.id ?(
